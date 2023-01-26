@@ -10,16 +10,20 @@ public class PilaArreglo {
     private int n;
 
     public PilaArreglo(int max) {
+        pila = new String[max];
         // TODO: instanciar el arreglo para la pila
     }
 
     public void push(String s) {
+        pila[n++] = s;
         // TODO: Implementar el método
     }
 
     public String pop() throws Exception {
         // TODO: Implementar el método
-        return null;
+        String tmp = pila[--n];
+        pila[n]=null; 
+        return tmp;
     }
 
     public boolean isEmpty() {
@@ -43,6 +47,16 @@ public class PilaArreglo {
     public static void main(String[] args) throws Exception {
         // TODO: Implementar algunos ejemplos de uso de la pila
         StdOut.println("Ejemplo Pila");
+        PilaArreglo p = new PilaArreglo(max: 3);
+        assert(p.isEmpty());
+        assert(p.size()==0);
+        p.push(s: "Hola");
+        p.push(s: "mundo");
+        assert(p.size()==2);
+        assert(!p.isEmpty());
+        String t = p.pop();
+        assert(t.equals(anObject:"Mundo));
+        assert(p.size()==1);
     }
 
 
